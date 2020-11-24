@@ -5,7 +5,11 @@ const schema = new db.Schema({
   firstName: String,
   lastName: String,
   role: String,
-  date: Date,
+  born: Date,
+  phoneNumber: String,
+  adress: String,
+  email: String,
+  cityId: String,
 });
 let User = db.model("User", schema, "User");
 module.exports = db.model("User");

@@ -10,8 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "casual": "^1.6.2",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "faker": "^5.1.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
     "orango": "^1.0.0-beta-1.1"
   }
