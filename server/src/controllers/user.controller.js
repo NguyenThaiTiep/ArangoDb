@@ -1,3 +1,4 @@
+const categoryService = require("../CRUD/category.service");
 const UserRepo = require("../models/user");
 
 const getAll = async (req, res) => {
@@ -5,40 +6,8 @@ const getAll = async (req, res) => {
   return res.send(result);
 };
 const add = async (req, res) => {
-  try {
-    let users = [
-      {
-        firstName: "bbbb",
-        lastName: "nguyen",
-        role: "admin",
-        date: new Date(),
-      },
-      {
-        firstName: "bbbb2",
-        lastName: "nguyen",
-        role: "admin",
-        date: new Date(),
-      },
-      {
-        firstName: "bbbb3",
-        lastName: "nguyen",
-        role: "admin",
-        date: new Date(),
-      },
-      {
-        firstName: "bbbb1",
-        lastName: "nguyen",
-        role: "admin",
-        date: new Date(),
-      },
-    ];
-
-    await UserRepo.import(users);
-
-    return res.send(200);
-  } catch (e) {
-    return res.send("Loi");
-  }
+  let result = await categoryService.add(req.input);
+  res.send(result);
 };
 const removeAll = async (req, res) => {
   try {

@@ -1,6 +1,6 @@
 const orango = require("orango");
 const { EVENTS } = orango.consts;
-const db = orango.get("test");
+const db = orango.get(process.env.DB_NAME);
 
 // we are connected, but orango has not initialized the models
 db.events.once(EVENTS.CONNECTED, (conn) => {
