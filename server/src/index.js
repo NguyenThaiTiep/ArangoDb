@@ -5,9 +5,24 @@ require("dotenv").config();
 let app = express();
 let server = http.createServer(app);
 let morgan = require("morgan");
+let cors = require("cors");
 morgan.token("id", function getId(req) {
   return req.id;
 });
+const options = {
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "X-Access-Token",
+  ],
+  credentials: true,
+  methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+  origin: "*",
+  preflightContinue: true,
+};
+app.use(cors(options));
 app.use(morgan("dev"));
 require("./loader/connect").createConnect();
 require("./router/index")(app);

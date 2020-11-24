@@ -1,10 +1,13 @@
 const { HandelStatus } = require("../config/handeStatus");
 const categorySeed = require("../lib/init-data/category.seed");
 const { CategoryRepo } = require("../models/category");
+const { all } = require("../router/book.router");
 
-const getAll = async () => {
+const getAll = async (take, skip) => {
   try {
-    let result = await CategoryRepo.find();
+    let result = await CategoryRepo.find()
+      .offset(skip || 0)
+      .limit(take || 10);
     return HandelStatus(200, null, result);
   } catch (e) {
     return HandelStatus(500);
@@ -33,12 +36,11 @@ const add = (input) => {
 };
 const seed = async (input) => {
   let amount = input;
-  let caterogy = await categorySeed(input);
+  let category = await categorySeed(input);
 
-  console.log(caterogy);
   try {
-    await CategoryRepo.import(caterogy);
-    return HandelStatus(200);
+    await CategoryRepo.import(category);
+    return HandelStatus(200, null, { amount });
   } catch (e) {
     return HandelStatus(500);
   }

@@ -1,7 +1,9 @@
 const categoryService = require("../CRUD/category.service");
 
 const getAll = async (req, res) => {
-  let result = await categoryService.getAll();
+  let take = req.query.take;
+  let skip = req.query.skip;
+  let result = await categoryService.getAll(take, skip);
   return res.send(result);
 };
 const add = async (req, res) => {};
@@ -10,7 +12,7 @@ const removeAll = async (req, res) => {
   return res.send(result);
 };
 const seed = async (req, res) => {
-  let amount = 10;
+  let amount = req.query.amount || 0;
   let result = await categoryService.seed(amount);
   return res.send(result);
 };

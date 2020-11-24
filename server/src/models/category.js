@@ -4,7 +4,7 @@ const db = require("../loader/connect").Database;
 const schema = new db.Schema(
   {
     name: String,
-    code: String,
+    code: { type: String, required: "insert" },
     price: Number,
     amount: Number,
     description: String,

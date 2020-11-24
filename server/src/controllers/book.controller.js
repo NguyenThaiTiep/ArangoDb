@@ -2,7 +2,9 @@ const bookService = require("../CRUD/book.service");
 const { BookRepo } = require("../models/book");
 
 const getAll = async (req, res) => {
-  let result = await bookService.getAll();
+  let take = req.query.take;
+  let skip = req.query.skip;
+  let result = await bookService.getAll(take, skip);
   return res.send(result);
 };
 const removeAll = async (req, res) => {
@@ -18,9 +20,8 @@ const add = async (req, res) => {
   res.send(result);
 };
 const seed = async (req, res) => {
-  let id = req.query.categoryId || "-1";
   let amount = req.query.amount || 0;
-  let result = await bookService.seed({ categoryId: id, amount: amount });
+  let result = await bookService.seed({ amount: amount });
   res.send(result);
 };
 const findByCategory = async (req, res) => {

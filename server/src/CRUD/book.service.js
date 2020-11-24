@@ -2,14 +2,13 @@ const { HandelStatus } = require("../config/handeStatus");
 const bookSeed = require("../lib/init-data/book.seed");
 const { BookRepo } = require("../models/book");
 const { CategoryRepo } = require("../models/category");
+const { all } = require("../router/book.router");
 
-const getAll = async () => {
+const getAll = async (take, skip) => {
   try {
     let result = await BookRepo.find()
-      .where({
-        name: { $eq: "Mrs. Verda Daugherty" },
-      })
-      .limit(10);
+      .offset(skip || 0)
+      .limit(take || 10);
     return HandelStatus(200, null, result);
   } catch (e) {
     return HandelStatus(500);
@@ -54,9 +53,9 @@ const seed = async (input) => {
   if (!input) {
     return HandelStatus(400);
   }
-  let category = await CategoryRepo.find()
-    .where({ _key: input.categoryId || "-1" })
-    .one();
+  let count = await CategoryRepo.count();
+  let offset = Math.floor(Math.random() * count);
+  let category = await CategoryRepo.find().offset(offset).one();
   if (!category) {
     return HandelStatus(404, "not found");
   }
@@ -64,9 +63,9 @@ const seed = async (input) => {
   try {
     await BookRepo.import(books);
     let booksCount = await BookRepo.count().where({
-      categoryId: input.categoryId,
+      categoryId: category._key,
     });
-    return HandelStatus(200, null, { count: booksCount, id: input.categoryId });
+    return HandelStatus(200, null, { count: booksCount, id: category._key });
   } catch (e) {
     return HandelStatus(500);
   }
