@@ -1,16 +1,23 @@
 const { string } = require("casual");
-const Joi = require("joi");
 const db = require("../loader/connect").Database;
 
 const schema = new db.Schema(
   {
-    code: String,
+    code: { type: String, required: "insert" },
     description: String,
-    userId: String,
-    productId: String,
+    customerName: String,
+    customerPhoneNumber: String,
+    totalPrice: Number,
+    date: Date,
+    products: [],
   },
   {
-    indexes: [{ type: "hash", fields: ["code"] }],
+    indexes: [
+      {
+        type: "hash",
+        fields: ["code"],
+      },
+    ],
   }
 );
 let Category = db.model("Bill", schema, "Bill");
