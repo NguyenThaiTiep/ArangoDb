@@ -1,5 +1,6 @@
 let express = require("express");
 let http = require("http");
+const bodyParser = require("body-parser");
 let { debug } = require("console");
 require("dotenv").config();
 let app = express();
@@ -24,11 +25,14 @@ const options = {
 };
 app.use(cors(options));
 app.use(morgan("dev"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 require("./loader/connect").createConnect();
 require("./router/index")(app);
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "Access-Control-Allow-Headers");
 });
+
 server.listen(3005);
 server.on("listening", onListening);
 function onListening() {
