@@ -8,6 +8,7 @@ const schema = new db.Schema(
     price: Number,
     amount: Number,
     categoryId: String,
+    categoryName: String,
     description: String,
   },
   {

@@ -1,10 +1,7 @@
 const { HandelStatus } = require("../config/handeStatus");
 const billSeed = require("../lib/init-data/bill.seed");
-const bookSeed = require("../lib/init-data/book.seed");
 const { BillRepo } = require("../models/bill");
 const { BookRepo } = require("../models/book");
-const { CategoryRepo } = require("../models/category");
-const { all } = require("../router/book.router");
 
 const getAll = async (take, skip) => {
   try {

@@ -1,24 +1,56 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
 import "./style.scss";
-interface Props {}
+interface Props {
+  pageActive?: Number;
+  lastPage?: Number;
+  handelChangePage?: (page: any) => void;
+}
 
 export const PaginationItem = (props: Props) => {
+  const { pageActive, lastPage, handelChangePage } = props;
+
+  const changePage = (page: any) => {
+    if (handelChangePage) {
+      handelChangePage(page);
+    }
+  };
   return (
     <div className="pageItem">
       <Pagination>
-        <Pagination.First />
-        <Pagination.Prev />
-        <Pagination.Item>{1}</Pagination.Item>
-        <Pagination.Ellipsis />
-        <Pagination.Item>{10}</Pagination.Item>
-        <Pagination.Item>{11}</Pagination.Item>
-        <Pagination.Item active>{12}</Pagination.Item>
-        <Pagination.Item>{13}</Pagination.Item>
-        <Pagination.Ellipsis />
-        <Pagination.Item>{20}</Pagination.Item>
-        <Pagination.Next />
-        <Pagination.Last />
+        <Pagination.Prev
+          disabled={pageActive == 1}
+          onClick={() => {
+            changePage((pageActive as any) - 1);
+          }}
+        />
+        {(pageActive as any) - 1 > 1 ? <Pagination.Ellipsis /> : null}
+        {(pageActive as any) > 1 ? (
+          <Pagination.Item
+            onClick={() => {
+              changePage((pageActive as any) - 1);
+            }}
+          >
+            {pageActive ? (pageActive as any) - 1 : 0}
+          </Pagination.Item>
+        ) : null}
+        <Pagination.Item active>{pageActive}</Pagination.Item>
+        {(pageActive as any) < (lastPage as any) ? (
+          <Pagination.Item
+            onClick={() => {
+              changePage((pageActive as any) + 1);
+            }}
+          >
+            {(pageActive as any) + 1}
+          </Pagination.Item>
+        ) : null}{" "}
+        {(pageActive as any) + 1 < (lastPage as any) ? (
+          <Pagination.Ellipsis />
+        ) : null}
+        <Pagination.Next
+          disabled={pageActive == lastPage}
+          onClick={() => changePage((pageActive as any) + 1)}
+        />
       </Pagination>
     </div>
   );
