@@ -1,4 +1,4 @@
-module.exports.HandelStatus = (status, message, data) => {
+module.exports.HandleStatus = (status, message, data) => {
   switch (status) {
     case 200:
       return {

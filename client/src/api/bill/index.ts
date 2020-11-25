@@ -1,7 +1,7 @@
 import API from "..";
 
-const getListCategory = (take: number, skip: number, key_search: string) => {
-    return API.get("/category", {
+const getListBill = (take: number, skip: number, key_search: string) => {
+    return API.get("/bill", {
         params: {
             skip: skip,
             take: take,
@@ -10,13 +10,14 @@ const getListCategory = (take: number, skip: number, key_search: string) => {
     });
 };
 const removeById = (id: string) => {
-    return API.delete("/category/remove", {params: {id: id}});
+    return API.delete("/bill/remove", {params: {id: id}});
 };
 const update = (input: {
-    name?: string;
+    customerName?: string;
+    customerPhoneNumber?: string;
     description?: string;
     _key?: string;
 }) => {
     return API.put("/category", {input: input});
 };
-export const CategoryApi = {getListCategory, removeById, update};
+export const BillApi = {getListBill, removeById, update};

@@ -1,4 +1,4 @@
-const { HandelStatus } = require("../config/handeStatus");
+const { HandleStatus } = require("../config/handeStatus");
 const categoryService = require("../CRUD/category.service");
 
 const getAll = async (req, res) => {
@@ -31,7 +31,7 @@ const update = async (req, res) => {
   let input = req.body.input;
   console.log(input);
   let result = await categoryService.update(input);
-  return res.send(HandelStatus(200));
+  return res.send(HandleStatus(200));
 };
 
 module.exports = { getAll, add, removeAll, seed, count, remove, update };

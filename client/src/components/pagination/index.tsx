@@ -1,57 +1,58 @@
 import React from "react";
-import { Pagination } from "react-bootstrap";
+import {Pagination} from "react-bootstrap";
 import "./style.scss";
+
 interface Props {
-  pageActive?: Number;
-  lastPage?: Number;
-  handelChangePage?: (page: any) => void;
+    pageActive?: Number;
+    lastPage?: Number;
+    handelChangePage?: (page: any) => void;
 }
 
 export const PaginationItem = (props: Props) => {
-  const { pageActive, lastPage, handelChangePage } = props;
+    const {pageActive, lastPage, handelChangePage} = props;
 
-  const changePage = (page: any) => {
-    if (handelChangePage) {
-      handelChangePage(page);
-    }
-  };
-  return (
-    <div className="pageItem">
-      <Pagination>
-        <Pagination.Prev
-          disabled={pageActive == 1}
-          onClick={() => {
-            changePage((pageActive as any) - 1);
-          }}
-        />
-        {(pageActive as any) - 1 > 1 ? <Pagination.Ellipsis /> : null}
-        {(pageActive as any) > 1 ? (
-          <Pagination.Item
-            onClick={() => {
-              changePage((pageActive as any) - 1);
-            }}
-          >
-            {pageActive ? (pageActive as any) - 1 : 0}
-          </Pagination.Item>
-        ) : null}
-        <Pagination.Item active>{pageActive}</Pagination.Item>
-        {(pageActive as any) < (lastPage as any) ? (
-          <Pagination.Item
-            onClick={() => {
-              changePage((pageActive as any) + 1);
-            }}
-          >
-            {(pageActive as any) + 1}
-          </Pagination.Item>
-        ) : null}{" "}
-        {(pageActive as any) + 1 < (lastPage as any) ? (
-          <Pagination.Ellipsis />
-        ) : null}
-        <Pagination.Next
-          disabled={pageActive == lastPage}
-          onClick={() => changePage((pageActive as any) + 1)}
-        />
-      </Pagination>
-    </div>
-  );
+    const changePage = (page: any) => {
+        if (handelChangePage) {
+            handelChangePage(page);
+        }
+    };
+    return (
+        <div className="pageItem">
+            <Pagination>
+                <Pagination.Prev
+                    disabled={pageActive == 1}
+                    onClick={() => {
+                        changePage((pageActive as any) - 1);
+                    }}
+                />
+                {(pageActive as any) - 1 > 1 ? <Pagination.Ellipsis/> : null}
+                {(pageActive as any) > 1 ? (
+                    <Pagination.Item
+                        onClick={() => {
+                            changePage((pageActive as any) - 1);
+                        }}
+                    >
+                        {pageActive ? (pageActive as any) - 1 : 0}
+                    </Pagination.Item>
+                ) : null}
+                <Pagination.Item active>{pageActive}</Pagination.Item>
+                {(pageActive as any) < (lastPage as any) ? (
+                    <Pagination.Item
+                        onClick={() => {
+                            changePage((pageActive as any) + 1);
+                        }}
+                    >
+                        {(pageActive as any) + 1}
+                    </Pagination.Item>
+                ) : null}{" "}
+                {(pageActive as any) + 1 < (lastPage as any) ? (
+                    <Pagination.Ellipsis/>
+                ) : null}
+                <Pagination.Next
+                    disabled={pageActive == lastPage}
+                    onClick={() => changePage((pageActive as any) + 1)}
+                />
+            </Pagination>
+        </div>
+    );
 };

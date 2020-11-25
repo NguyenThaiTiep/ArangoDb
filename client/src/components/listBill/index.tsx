@@ -1,17 +1,17 @@
-import {faEdit, faTrash} from "@fortawesome/free-solid-svg-icons";
+import {faEdit, faTrash,} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React, {useEffect, useState} from "react";
 import {Button, ButtonGroup, Form, Modal, Table} from "react-bootstrap";
-import {CategoryApi} from "../../api/category";
-import {handelToast} from "../../app/page/toast";
 import {HeaderTable} from "../../containers/headerTable";
 import {PaginationItem} from "../pagination";
 import "./style.scss";
+import {handelToast} from "../../app/page/toast";
+import {BillApi} from "../../api/bill";
 
 interface Props {
 }
 
-export const ListCategory = (props: Props) => {
+export const ListBill = (props: Props) => {
     const [page, setPage] = useState({
         page: 1,
         take: 5,
@@ -19,39 +19,44 @@ export const ListCategory = (props: Props) => {
         total: 100,
         key_search: "",
     });
-    const [show, setShow] = useState(false);
-    const [categorySelect, setCategorySelect] = useState({
-        name: null,
+    const [billSelect, setBillSelect] = useState({
         _key: null,
         description: null,
-        categoryName: null,
-        categoryId: null,
-        amount: null,
+        customerName: null,
+        customerPhoneNumber: null,
+        totalPrice: null,
+        date: null,
+        product: null,
     });
+    const [total, setTotal] = useState(0);
+    const [bills, setBills] = useState([]);
+    const [show, setShow] = useState(false);
+
     const handleClose = () => setShow(false);
     const handleShow = (item: any) => {
-        setCategorySelect(item);
+        setBillSelect(item);
         setShow(true);
     };
-    const [total, setTotal] = useState(0);
     const handelChangePage = (pageNumber: any) => {
         setPage({...page, page: pageNumber, skip: (pageNumber - 1) * page.take});
     };
     const searchOnChange = (key: string) => {
         setPage({...page, page: 0, skip: 0, key_search: key});
     };
-    const [categories, setCategories] = useState([]);
+    const updateBook = () => {
+    };
     const removeById = (id: string) => {
-        CategoryApi.removeById(id).then((res) => {
+        BillApi.removeById(id).then((res) => {
             handelToast(res.data.status);
             setPage({...page});
         });
     };
     const update = () => {
-        CategoryApi.update({
-            name: (categorySelect as any).name as string,
-            _key: (categorySelect as any)._key as string,
-            description: (categorySelect as any).description,
+        BillApi.update({
+            customerName: (billSelect as any).customerName as string,
+            customerPhoneNumber: (billSelect as any).customerPhoneNumber as string,
+            _key: (billSelect as any)._key as string,
+            description: (billSelect as any).description,
         }).then((res) => {
             handelToast(res.data.status);
             setPage({...page});
@@ -59,11 +64,11 @@ export const ListCategory = (props: Props) => {
         });
     };
     useEffect(() => {
-        CategoryApi.getListCategory(page.take, page.skip, page.key_search).then(
+        BillApi.getListBill(page.take, page.skip, page.key_search).then(
             (res) => {
                 if (res.data.status == 200) {
-                    let categories = res.data.result.result;
-                    setCategories(categories);
+                    let bills = res.data.result.result;
+                    setBills(bills);
                     setTotal(res.data.result.count);
                 }
             }
@@ -74,25 +79,31 @@ export const ListCategory = (props: Props) => {
             <HeaderTable searchKeyOnChange={searchOnChange} total={total}/>
             <Table striped bordered hover>
                 <thead>
-                <tr className="text-center">
+                <tr className={"text-center"}>
                     <th>#</th>
                     <th>Mã</th>
-                    <th>Tên</th>
+                    <th>Tên Khách Hàng</th>
+                    <th>Số điện thoại</th>
                     <th>Mô tả</th>
-                    <th>SL</th>
+                    <th>Tổng giá trị</th>
+                    <th>Thời gian</th>
+                    <th>Tổng Sản phẩm</th>
                     <th>#</th>
                 </tr>
                 </thead>
                 <tbody>
-                {categories.length > 0
-                    ? categories.map((item, index) => {
+                {bills.length > 0
+                    ? bills.map((item, index) => {
                         return (
                             <tr key={index}>
-                                <td>{index + 1}</td>
+                                <td>{index + (page.page - 1) * page.take + 1}</td>
                                 <td>{(item as any)._key}</td>
-                                <td>{(item as any).name}</td>
+                                <td>{(item as any).customerName}</td>
+                                <td>{(item as any).customerPhoneNumber}</td>
                                 <td>{(item as any).description}</td>
-                                <td>{(item as any).amount}</td>
+                                <td>{(item as any).totalPrice}</td>
+                                <td>{(item as any).date}</td>
+                                <td>{(item as any).products}</td>
                                 <td>
                                     <ButtonGroup>
                                         <div
@@ -102,10 +113,9 @@ export const ListCategory = (props: Props) => {
                                             <FontAwesomeIcon icon={faEdit} color={"green"}/>
                                         </div>
                                         <div className={"icon-item"}>
-                                            <FontAwesomeIcon
-                                                icon={faTrash}
-                                                color={"red"}
-                                                onClick={() => removeById((item as any)._key)}
+                                            <FontAwesomeIcon icon={faTrash}
+                                                             color={"red"}
+                                                             onClick={() => removeById((item as any)._key)}
                                             />
                                         </div>
                                     </ButtonGroup>
@@ -126,43 +136,46 @@ export const ListCategory = (props: Props) => {
             <Modal show={show}>
                 <Modal.Header closeButton onClick={handleClose}>
                     <Modal.Title className="text-center">
-                        Chỉnh sửa thông tin Sách
+                        Chỉnh sửa thông tin Hóa đơn
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Tên Thể loại</Form.Label>
+                            <Form.Label>Tên Khách Hàng</Form.Label>
+                            <Form.Control type="text"
+                                          value={(billSelect as any).customerName}
+                                          onChange={(e: any) => {
+                                              setBillSelect({
+                                                  ...billSelect,
+                                                  customerName: e.target.value,
+                                              });
+                                          }}/>
+                            <Form.Label>Số điện thoại Khách Hàng</Form.Label>
                             <Form.Control
-                                type="email"
+                                type="phone"
+                                placeholder="text"
+                                value={(billSelect as any).customerPhoneNumber}
                                 onChange={(e: any) => {
-                                    setCategorySelect({
-                                        ...categorySelect,
-                                        name: e.target.value,
+                                    setBillSelect({
+                                        ...billSelect,
+                                        customerPhoneNumber: e.target.value,
                                     });
                                 }}
-                                value={(categorySelect as any).name}
                             />
                             <Form.Label>Mô tả</Form.Label>
                             <Form.Control
                                 as="textarea"
                                 rows={3}
                                 placeholder="text"
+                                value={(billSelect as any).description}
                                 onChange={(e: any) => {
-                                    setCategorySelect({
-                                        ...categorySelect,
+                                    setBillSelect({
+                                        ...billSelect,
                                         description: e.target.value,
                                     });
                                 }}
-                                value={(categorySelect as any).description}
                             />{" "}
-                            <Form.Label>Số lượng</Form.Label>
-                            <Form.Control
-                                disabled
-                                type="text"
-                                placeholder="text"
-                                value={(categorySelect as any).amount}
-                            />
                         </Form.Group>
                     </Form>
                 </Modal.Body>
@@ -170,12 +183,7 @@ export const ListCategory = (props: Props) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Thoát
                     </Button>
-                    <Button
-                        variant="primary"
-                        onClick={() => {
-                            update();
-                        }}
-                    >
+                    <Button variant="primary" onClick={update}>
                         Lưu
                     </Button>
                 </Modal.Footer>

@@ -1,7 +1,8 @@
 import React from "react";
 
-interface Props {}
+interface Props {
+}
 
 export const Home = (props: Props) => {
-  return <div></div>;
+    return <div/>;
 };

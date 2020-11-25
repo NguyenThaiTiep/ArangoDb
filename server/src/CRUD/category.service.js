@@ -1,4 +1,4 @@
-const { HandelStatus } = require("../config/handeStatus");
+const { HandleStatus } = require("../config/handeStatus");
 const categorySeed = require("../lib/init-data/category.seed");
 const { Database } = require("../loader/connect");
 const { BookRepo } = require("../models/book");
@@ -15,40 +15,40 @@ const getAll = async (take, skip, key) => {
       RETURN category`;
     let count = await CategoryRepo.count();
     let result = await Database.query(qr);
-    return HandelStatus(200, null, { count, result: result._result });
+    return HandleStatus(200, null, { count, result: result._result });
   } catch (e) {
-    return HandelStatus(500);
+    return HandleStatus(500);
   }
 };
 const removeAll = async () => {
   try {
     let result = await CategoryRepo.remove();
     await BookRepo.remove();
-    return HandelStatus(200, null, result);
+    return HandleStatus(200, null, result);
   } catch (e) {
-    return HandelStatus(500);
+    return HandleStatus(500);
   }
 };
 const getCount = async () => {
   try {
     let result = await CategoryRepo.count();
-    return HandelStatus(200, null, result);
+    return HandleStatus(200, null, result);
   } catch (e) {
-    return HandelStatus(500);
+    return HandleStatus(500);
   }
 };
 const add = (input) => {
-  if (!input || !input.name || !input.code) return HandelStatus();
-  return HandelStatus();
+  if (!input || !input.name || !input.code) return HandleStatus();
+  return HandleStatus();
 };
 const remove = async (id) => {
-  if (!id) return HandelStatus(404);
+  if (!id) return HandleStatus(404);
   try {
     await CategoryRepo.remove().where({ _key: id });
     BookRepo.remove().where({ categoryId: id });
-    return HandelStatus(200);
+    return HandleStatus(200);
   } catch (e) {
-    return HandelStatus(500);
+    return HandleStatus(500);
   }
 };
 const update = async (input) => {
@@ -60,9 +60,9 @@ const update = async (input) => {
     BookRepo.update({ categoryName: input.name }).where({
       categoryId: input._key,
     });
-    return HandelStatus(200);
+    return HandleStatus(200);
   } catch (e) {
-    return HandelStatus(500);
+    return HandleStatus(500);
   }
 };
 const seed = async (input) => {
@@ -71,9 +71,9 @@ const seed = async (input) => {
 
   try {
     await CategoryRepo.import(category);
-    return HandelStatus(200, null, { amount });
+    return HandleStatus(200, null, { amount });
   } catch (e) {
-    return HandelStatus(500);
+    return HandleStatus(500);
   }
 };
 module.exports = { add, seed, getAll, getCount, removeAll, remove, update };

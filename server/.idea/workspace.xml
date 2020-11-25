@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:root" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f207e3b0-b7aa-4916-99b6-411164226467" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../client/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.idea/client.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/api/bill/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/components/listBill/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/components/listBill/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/api/category/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/api/category/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/page/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/page/home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/listBook/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/listBook/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/listCaterogy/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/listCaterogy/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/navabar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/navabar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/containers/headerTable/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/containers/headerTable/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CRUD/bill.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CRUD/bill.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CRUD/book.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CRUD/book.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CRUD/category.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/CRUD/category.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/handeStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/handeStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/bill.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/bill.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/category.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/category.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/bill.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/bill.router.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="ProjectId" id="1kmrGKbJ4kkzyU8zsbkgvyuw1z4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\phong\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.7660.23\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="book.seed.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/lib/init-data/book.seed.js" working-dir="$PROJECT_DIR$/src/lib/init-data">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.book.seed.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f207e3b0-b7aa-4916-99b6-411164226467" name="Default Changelist" comment="" />
+      <created>1606316511228</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606316511228</updated>
+      <workItem from="1606316512376" duration="668000" />
+      <workItem from="1606317253458" duration="8202000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1493" height="518" key="GridCell.Tab.0.bottom" timestamp="1606322186207">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="518" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606322186207" />
+    <state width="1493" height="518" key="GridCell.Tab.0.center" timestamp="1606322186206">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="518" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606322186206" />
+    <state width="1493" height="518" key="GridCell.Tab.0.left" timestamp="1606322186206">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="518" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606322186206" />
+    <state width="1493" height="518" key="GridCell.Tab.0.right" timestamp="1606322186206">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="518" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606322186206" />
+    <state x="480" y="7" width="576" height="849" key="find.popup" timestamp="1606325947840">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="480" y="7" width="576" height="849" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1606325947840" />
+  </component>
+</project>
