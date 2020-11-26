@@ -1,16 +1,24 @@
 const { json } = require("body-parser");
 const casual = require("casual");
 const { fake } = require("faker");
-
+let key = require("../../../../libs/name.json");
+let name = key["name"];
 var faker = require("faker");
 casual.define("Bill", function () {
   return {
     code: faker.random.uuid(),
     description: faker.finance.transactionDescription(),
     products: [],
-    customerName: faker.name.firstName(),
+    customerName:
+      faker.name.firstName() +
+      " " +
+      casual.random_element(name) +
+      " " +
+      casual.random_element(name) +
+      " " +
+      casual.random_element(name),
     customerPhoneNumber: faker.phone.phoneNumber(),
-    total: 0,
+    totalPrice: 0,
     date: faker.date.between("2019/01/01", "2020/12/12"),
   };
 });
@@ -20,7 +28,7 @@ module.exports = (times, products) => {
   for (var i = 0; i < times; ++i) {
     let bill = casual.Bill;
     bill.products = products;
-    bill.total = sum(products);
+    bill.totalPrice = sum(products);
     result.push(bill);
   }
   return result;
@@ -33,3 +41,4 @@ const sum = (products) => {
   }
   return result;
 };
+module.exports.sum = sum;

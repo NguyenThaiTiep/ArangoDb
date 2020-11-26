@@ -13,15 +13,22 @@ const getAll = async (take, skip, key) => {
     SORT category.name
     LIMIT ${skip || 0},${take || 10}
       RETURN category`;
+    let startTime = Date.now();
     let count = await CategoryRepo.count();
     let result = await Database.query(qr);
-    return HandleStatus(200, null, { count, result: result._result });
+    return HandleStatus(
+      200,
+      null,
+      { count, result: result._result },
+      (Date.now() - startTime) / 1000
+    );
   } catch (e) {
     return HandleStatus(500);
   }
 };
 const removeAll = async () => {
   try {
+    let startTime = Date.now();
     let result = await CategoryRepo.remove();
     await BookRepo.remove();
     return HandleStatus(200, null, result);
@@ -31,28 +38,43 @@ const removeAll = async () => {
 };
 const getCount = async () => {
   try {
+    let startTime = Date.now();
     let result = await CategoryRepo.count();
-    return HandleStatus(200, null, result);
+    return HandleStatus(200, null, result, (Date.now() - startTime) / 1000);
   } catch (e) {
     return HandleStatus(500);
   }
 };
-const add = (input) => {
-  if (!input || !input.name || !input.code) return HandleStatus();
-  return HandleStatus();
+const add = async (input) => {
+  if (!input || !input.name || !input.code) {
+    return HandleStatus(500);
+  }
+  try {
+    let startTime = Date.now();
+    await CategoryRepo.insert({
+      name: input.name,
+      code: input.code,
+      amount: input.amount || 0,
+    });
+    return HandleStatus(200, null, null, (Date.now() - startTime) / 1000);
+  } catch (e) {
+    return HandleStatus(500);
+  }
 };
 const remove = async (id) => {
   if (!id) return HandleStatus(404);
   try {
+    let startTime = Date.now();
     await CategoryRepo.remove().where({ _key: id });
     BookRepo.remove().where({ categoryId: id });
-    return HandleStatus(200);
+    return HandleStatus(200, null, null, (Date.now() - startTime) / 1000);
   } catch (e) {
     return HandleStatus(500);
   }
 };
 const update = async (input) => {
   try {
+    let startTime = Date.now();
     await CategoryRepo.update({
       name: input.name,
       description: input.description,
@@ -60,7 +82,7 @@ const update = async (input) => {
     BookRepo.update({ categoryName: input.name }).where({
       categoryId: input._key,
     });
-    return HandleStatus(200);
+    return HandleStatus(200, null, null, (Date.now() - startTime) / 1000);
   } catch (e) {
     return HandleStatus(500);
   }
@@ -68,10 +90,12 @@ const update = async (input) => {
 const seed = async (input) => {
   let amount = input;
   let category = await categorySeed(input);
-
+  if (category) {
+    startTime = Date.now();
+  }
   try {
     await CategoryRepo.import(category);
-    return HandleStatus(200, null, { amount });
+    return HandleStatus(200, null, { amount }, (Date.now() - startTime) / 1000);
   } catch (e) {
     return HandleStatus(500);
   }

@@ -28,4 +28,17 @@ const findByCategory = async (req, res) => {
   let result = await bookService.getByCategoryId(null);
   res.send(result);
 };
-module.exports = { getAll, add, removeAll, seed, findByCategory, count };
+const update = async (req, res) => {
+  let input = req.body.input;
+  let result = await bookService.update(input);
+  res.send(result);
+};
+module.exports = {
+  getAll,
+  add,
+  removeAll,
+  seed,
+  findByCategory,
+  count,
+  update,
+};

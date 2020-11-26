@@ -18,6 +18,7 @@ module.exports.createConnect = async () => {
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
     });
+
     // everything is initialized and we are ready to go
     console.log("Are we connected?", db.connection.connected); // true
   } catch (e) {

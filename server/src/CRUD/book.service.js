@@ -3,7 +3,6 @@ const bookSeed = require("../lib/init-data/book.seed");
 const { Database } = require("../loader/connect");
 const { BookRepo } = require("../models/book");
 const { CategoryRepo } = require("../models/category");
-const { all } = require("../router/book.router");
 
 const getAll = async (take, skip, key) => {
   try {
@@ -14,8 +13,14 @@ const getAll = async (take, skip, key) => {
     LIMIT ${skip || 0},${take || 10} 
       RETURN book`;
     let count = await BookRepo.count();
+    let startTime = Date.now();
     let result = await Database.query(qr);
-    return HandleStatus(200, null, { count, result: result._result });
+    return HandleStatus(
+      200,
+      null,
+      { count, result: result._result },
+      (Date.now() - startTime) / 1000
+    );
   } catch (e) {
     return HandleStatus(500);
   }
@@ -38,13 +43,14 @@ const add = async (input) => {
   if (!input || !input.name || !input.code || input.categoryId) {
     return HandleStatus(500);
   }
+
   let category = await CategoryRepo.find()
     .where({ _key: input.categoryId })
     .one();
   if (!category) {
     return HandleStatus(404, "not Found");
   }
-  console.log(category);
+  let startTime = Date.now();
   try {
     await BookRepo.insert({
       name: input.name,
@@ -53,7 +59,7 @@ const add = async (input) => {
       amount: input.amount || 0,
       category: category,
     });
-    return HandleStatus(200);
+    return HandleStatus(200, null, null, (Date.now() - startTime) / 1000);
   } catch (e) {
     return HandleStatus(500);
   }
@@ -70,6 +76,7 @@ const seed = async (input) => {
   }
   let books = await bookSeed(input.amount || 0, category);
   try {
+    let startTime = Date.now();
     await BookRepo.import(books);
     let booksCount = await BookRepo.count().where({
       categoryId: category._key,
@@ -77,7 +84,12 @@ const seed = async (input) => {
     await CategoryRepo.update({
       amount: category.amount + input.amount,
     }).where({ _key: category._key });
-    return HandleStatus(200, null, { count: booksCount, id: category._key });
+    return HandleStatus(
+      200,
+      null,
+      { count: booksCount, id: category._key },
+      (Date.now() - startTime) / 1000
+    );
   } catch (e) {
     return HandleStatus(500);
   }
@@ -94,4 +106,25 @@ const getByCategoryId = async (id) => {
     return HandleStatus(500);
   }
 };
-module.exports = { add, seed, getAll, getCount, getByCategoryId, removeAll };
+const update = async (input) => {
+  try {
+    let startTime = Date.now();
+    await BookRepo.update({
+      name: input.name,
+      description: input.description,
+      price: input.price,
+    }).where({ _key: input._key });
+    return HandleStatus(200, null, null, (Date.now() - startTime) / 1000);
+  } catch (e) {
+    return HandleStatus(500);
+  }
+};
+module.exports = {
+  add,
+  seed,
+  getAll,
+  getCount,
+  getByCategoryId,
+  removeAll,
+  update,
+};

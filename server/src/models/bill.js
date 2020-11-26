@@ -20,5 +20,5 @@ const schema = new db.Schema(
     ],
   }
 );
-let Category = db.model("Bill", schema, "Bill");
+let Bill = db.model("Bill", schema, "Bill");
 module.exports.BillRepo = db.model("Bill");

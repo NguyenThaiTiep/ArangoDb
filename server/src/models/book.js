@@ -7,6 +7,7 @@ const schema = new db.Schema(
     code: { type: String, required: "insert" },
     price: Number,
     amount: Number,
+    author: String,
     categoryId: String,
     categoryName: String,
     description: String,

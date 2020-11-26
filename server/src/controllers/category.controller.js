@@ -6,6 +6,7 @@ const getAll = async (req, res) => {
   let skip = req.query.skip;
   let key = req.query.key;
   let result = await categoryService.getAll(take, skip, key);
+
   return res.send(result);
 };
 const add = async (req, res) => {};
@@ -16,6 +17,7 @@ const removeAll = async (req, res) => {
 const seed = async (req, res) => {
   let amount = req.query.amount || 0;
   let result = await categoryService.seed(amount);
+
   return res.send(result);
 };
 const count = async (req, res) => {
