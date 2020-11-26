@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a4a3aec4-583e-4bce-a344-f872c525c874" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/client.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/bill/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/listBill/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/listBill/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/book/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/book/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/category/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/category/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page/home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page/toast/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page/toast/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/listBook/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/listBook/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/listBook/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/listBook/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/listCaterogy/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/listCaterogy/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/listCaterogy/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/listCaterogy/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navabar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pagination/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pagination/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pagination/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pagination/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ModelEdit/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ModelEdit/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/headerTable/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/headerTable/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/headerTable/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/headerTable/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/CRUD/bill.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/CRUD/bill.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/CRUD/book.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/CRUD/book.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/CRUD/category.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/CRUD/category.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/config/handeStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/config/handeStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/controllers/bill.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/controllers/bill.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/controllers/category.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/controllers/category.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/router/bill.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/router/bill.router.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1kmrF4Kw81H9HMZ5WC71tpzWBWl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/listBill" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+    <property name="ts.external.directory.path" value="C:\Users\phong\Desktop\ArangoDb\client\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\phong\Desktop\ArangoDb\client\src\components\listBill" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4a3aec4-583e-4bce-a344-f872c525c874" name="Default Changelist" comment="" />
+      <created>1606316501284</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606316501284</updated>
+      <workItem from="1606316502415" duration="678000" />
+      <workItem from="1606317253770" duration="10026000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser" timestamp="1606327739528">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="148" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1606327739528" />
+    <state x="512" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606322908536">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="512" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.864@0.0.1536.864" timestamp="1606322908536" />
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1606316508621">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606316508621" />
+    <state x="399" y="186" key="MultipleFileMergeDialog" timestamp="1606321400285">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="399" y="186" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1606321400285" />
+    <state x="152" y="52" key="SettingsEditor" timestamp="1606322801379">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="152" y="52" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606322801379" />
+    <state x="640" y="276" key="cloudConfig.SelfSettingsDialog" timestamp="1606317195166">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="640" y="276" key="cloudConfig.SelfSettingsDialog/0.0.1536.864@0.0.1536.864" timestamp="1606317195166" />
+  </component>
+</project>

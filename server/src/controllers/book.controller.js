@@ -1,10 +1,10 @@
 const bookService = require("../CRUD/book.service");
-const { BookRepo } = require("../models/book");
 
 const getAll = async (req, res) => {
   let take = req.query.take;
   let skip = req.query.skip;
-  let result = await bookService.getAll(take, skip);
+  let key = req.query.key;
+  let result = await bookService.getAll(take, skip, key);
   return res.send(result);
 };
 const removeAll = async (req, res) => {

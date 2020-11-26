@@ -14,6 +14,7 @@ casual.define("Bill", function () {
     date: faker.date.between("2019/01/01", "2020/12/12"),
   };
 });
+casual.seed(1000000);
 module.exports = (times, products) => {
   var result = [];
   for (var i = 0; i < times; ++i) {
