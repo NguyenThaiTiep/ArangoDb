@@ -13,7 +13,7 @@ export class Category {
   id: number;
   @Column({ charset: "utf8", type: "nvarchar" })
   name: string;
-  @Column()
+  @Column({ default: "afasfS" })
   code: string;
   @Column({ default: 0 })
   amount: Number;

@@ -9,7 +9,11 @@ const getAll = async (req, res) => {
 
   return res.send(result);
 };
-const add = async (req, res) => {};
+const add = async (req, res) => {
+  let input = req.body.input;
+  let result = await categoryService.add(input);
+  return res.send(result);
+};
 const removeAll = async (req, res) => {
   let result = await categoryService.removeAll();
   return res.send(result);
@@ -31,9 +35,8 @@ const remove = async (req, res) => {
 };
 const update = async (req, res) => {
   let input = req.body.input;
-  console.log(input);
   let result = await categoryService.update(input);
-  return res.send(HandleStatus(200));
+  return res.send(result);
 };
 
 module.exports = { getAll, add, removeAll, seed, count, remove, update };

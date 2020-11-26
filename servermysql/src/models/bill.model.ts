@@ -53,14 +53,13 @@ const add = async (input: BillInputDto) => {
   let BillRepo = getRepository(Bill);
   let bill = plainToClass(Bill, input);
   let startTime = Date.now();
-  console.log();
 
   let books = await getRepository(Book).findByIds(input.bookIds || [-1]);
-  console.log(books);
 
   if (!books && books.length == 0)
     return handelStatus(404, "cateogry not found");
   try {
+    bill.books = books;
     await BillRepo.save(bill);
     return handelStatus(200, null, null, (Date.now() - startTime) / 1000);
   } catch (e) {
@@ -81,11 +80,8 @@ const update = async (input: BillInputDto) => {
   let BillRepo = getRepository(Bill);
 
   try {
-    console.log(input);
-
     if (!input.id) return handelStatus(404);
     let bill = await BillRepo.findOne({ id: input.id });
-    console.log(bill);
 
     if (!bill) return handelStatus(404);
     bill = mapObject(bill, input);
@@ -100,7 +96,6 @@ const update = async (input: BillInputDto) => {
 const seed = async (amount) => {
   let bookRepo = getRepository(Book);
   let take = Math.floor(Math.random() * 3 + 1);
-  console.log(take);
 
   let books = await bookRepo
     .createQueryBuilder()

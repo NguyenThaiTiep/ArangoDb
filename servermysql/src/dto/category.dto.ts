@@ -8,8 +8,6 @@ export class CategoryInputDto {
   @Expose()
   code: string;
   @Expose()
-  author: string;
-  @Expose()
   price: string;
   @Expose()
   description: string;

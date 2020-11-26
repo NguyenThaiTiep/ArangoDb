@@ -2,8 +2,6 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  OneToMany,
-  ManyToMany,
   ManyToOne,
   JoinColumn,
 } from "typeorm";
@@ -19,7 +17,9 @@ export class Book {
   code: string;
   @Column({ charset: "utf8", type: "nvarchar" })
   author: string;
-  @Column()
+  @Column({ default: 0 })
+  amount: number;
+  @Column({ default: 0 })
   price: number;
   @Column({ charset: "utf8", type: "text" })
   description: string;

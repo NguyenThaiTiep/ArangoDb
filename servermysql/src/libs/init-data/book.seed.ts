@@ -10,12 +10,16 @@ casual.define("Book", function () {
   return {
     name:
       casual.random_element(name) +
+      " " +
       casual.random_element(name) +
+      " " +
       casual.random_element(name),
     amount: 0,
     author:
       casual.random_element(name) +
+      " " +
       casual.random_element(name) +
+      " " +
       casual.random_element(name),
     price: faker.commerce.price(),
     description: faker.commerce.productDescription(),

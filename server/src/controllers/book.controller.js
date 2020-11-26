@@ -16,7 +16,8 @@ const count = async (req, res) => {
   return res.send(result);
 };
 const add = async (req, res) => {
-  let result = await bookService.add(null);
+  let input = req.body.input;
+  let result = await bookService.add(input);
   res.send(result);
 };
 const seed = async (req, res) => {
@@ -33,6 +34,11 @@ const update = async (req, res) => {
   let result = await bookService.update(input);
   res.send(result);
 };
+const remove = async (req, res) => {
+  let input = req.query.id;
+  let result = await bookService.remove(input);
+  res.send(result);
+};
 module.exports = {
   getAll,
   add,
@@ -41,4 +47,5 @@ module.exports = {
   findByCategory,
   count,
   update,
+  remove,
 };

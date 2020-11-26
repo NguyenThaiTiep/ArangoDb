@@ -11,6 +11,7 @@ const getAll = async (skip: number, take: number, key: number) => {
 
   try {
     let startTime = Date.now();
+    let count = await categoryRepo.count();
     let result = await categoryRepo.find({
       where: [
         {
@@ -21,7 +22,12 @@ const getAll = async (skip: number, take: number, key: number) => {
       take: take || 10,
       skip: skip || 0,
     });
-    return handelStatus(200, null, result, (Date.now() - startTime) / 1000);
+    return handelStatus(
+      200,
+      null,
+      { result, count },
+      (Date.now() - startTime) / 1000
+    );
   } catch (e) {
     return handelStatus(500, e);
   }

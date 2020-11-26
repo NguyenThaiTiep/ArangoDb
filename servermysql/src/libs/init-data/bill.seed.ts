@@ -11,7 +11,9 @@ casual.define("Bill", function () {
   return {
     customerName:
       casual.random_element(name) +
+      " " +
       casual.random_element(name) +
+      " " +
       casual.random_element(name),
     customerPhoneNumber: faker.phone.phoneNumber(),
     description: faker.commerce.productDescription(),

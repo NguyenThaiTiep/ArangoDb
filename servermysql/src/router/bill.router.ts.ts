@@ -5,6 +5,7 @@ import { bookController } from "../controller/book.controller";
 const billRouter = express.Router();
 billRouter
   .get("/", billController.getAll)
+  .post("/add", billController.add)
   .get("/seed", billController.seed)
   .delete("/remove", billController.remove)
   .put("/", billController.update)

@@ -7,10 +7,11 @@ interface Props {
   searchKeyOnChange: (key: string) => void;
   total: Number;
   timeQuery?: Number;
+  title?: string;
 }
 
 export const HeaderTable = (props: Props) => {
-  const { total, searchKeyOnChange, timeQuery } = props;
+  const { total, searchKeyOnChange, timeQuery, title } = props;
   const [value, setValue] = useState("");
   const searchOnChange = (event: any) => {
     let key = event.target.value;
@@ -21,8 +22,9 @@ export const HeaderTable = (props: Props) => {
   };
   return (
     <div className="headerTable">
+      <h4>{title}</h4>
       <Row>
-        <Col>
+        <Col md={4}>
           <Form inline>
             <FormControl
               type="text"
@@ -33,12 +35,12 @@ export const HeaderTable = (props: Props) => {
             <Button variant="outline-success">Search</Button>
           </Form>
         </Col>{" "}
-        <Col>
+        <Col md={4}>
           <div className={"sum"}>
             Tổng : <b>{total}</b>
           </div>
         </Col>
-        <Col>
+        <Col md={4}>
           <div className={"sum"}>
             TimeQuery :{" "}
             <b>
@@ -46,7 +48,6 @@ export const HeaderTable = (props: Props) => {
             </b>
           </div>
         </Col>
-        <Button>Tạo mới</Button>
       </Row>
     </div>
   );

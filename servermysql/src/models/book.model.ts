@@ -52,6 +52,7 @@ const add = async (input: BookInputDto) => {
   });
   if (!category) return handelStatus(404, "cateogry not found");
   try {
+    book.category = category;
     await BookRepo.save(book);
     category.amount = category.amount || 0 + 1;
     await getRepository(Category).save(category);
@@ -68,11 +69,12 @@ const remove = async (id: number) => {
     let startTime = Date.now();
     let book = await BookRepo.findOne({
       where: { id: id },
-      relations: ["book"],
+      relations: ["category"],
     });
     let category = await getRepository(Category).findOne({
       id: book.category.id,
     });
+    if (!category || !book) return handelStatus(404);
     await BookRepo.delete(id);
     category.amount = category.amount || 0 - 1;
     await getRepository(Category).save(category);

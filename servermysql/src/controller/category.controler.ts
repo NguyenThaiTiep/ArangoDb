@@ -44,7 +44,7 @@ const update = async (req, res) => {
     excludeExtraneousValues: true,
   });
   let result = await categoryService.update(inputCategory);
-  return res.send(handelStatus(200));
+  return res.send(result);
 };
 
 export const categoryController = {

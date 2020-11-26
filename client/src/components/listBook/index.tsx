@@ -45,16 +45,21 @@ export const ListBook = (props: Props) => {
     setPage({ ...page, page: 1, skip: 0, key_search: key || "" });
   };
   const removeBook = (key: string) => {
-    
-  }
+    BookAPI.remove(key).then((res) => {
+      handelToast(res.data.status, res.data.time);
+      setPage({ ...page });
+    });
+  };
   const updateBook = () => {
     BookAPI.update({
       _key: (bookSelect as any)._key,
       name: (bookSelect as any).name,
       description: (bookSelect as any).descriprtion,
+      author: (bookSelect as any).author,
+      amount: (bookSelect as any).amount,
     }).then((res) => {
       handelToast(res.data.status, res.data.time);
-      if (res.status == 200) {
+      if (res.data.status == 200) {
         setTimeQuery(res.data.time);
         setPage({ ...page });
         setShow(false);
@@ -77,6 +82,7 @@ export const ListBook = (props: Props) => {
         searchKeyOnChange={searchOnChange}
         total={total}
         timeQuery={timeQuery}
+        title={"ArangoDB"}
       />
       <div className="table-box">
         <Table striped bordered hover>
@@ -114,7 +120,12 @@ export const ListBook = (props: Props) => {
                           >
                             <FontAwesomeIcon icon={faEdit} color={"green"} />
                           </div>
-                          <div className={"icon-item"}>
+                          <div
+                            className={"icon-item"}
+                            onClick={() => {
+                              removeBook((item as any)._key);
+                            }}
+                          >
                             <FontAwesomeIcon icon={faTrash} color={"red"} />
                           </div>
                         </ButtonGroup>
@@ -166,11 +177,29 @@ export const ListBook = (props: Props) => {
                   });
                 }}
               />{" "}
+              <Form.Label>Tác giả</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="text"
+                value={(bookSelect as any).author}
+                onChange={(e: any) => {
+                  setBookSelect({
+                    ...bookSelect,
+                    author: e.target.value,
+                  });
+                }}
+              />
               <Form.Label>Số lượng</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="text"
                 value={(bookSelect as any).amount}
+                onChange={(e: any) => {
+                  setBookSelect({
+                    ...bookSelect,
+                    amount: e.target.value,
+                  });
+                }}
               />
             </Form.Group>
           </Form>

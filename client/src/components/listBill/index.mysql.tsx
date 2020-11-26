@@ -86,6 +86,7 @@ export const ListBillMysql = (props: Props) => {
         searchKeyOnChange={searchOnChange}
         total={total}
         timeQuery={timeQuery}
+        title={"MySql"}
       />
       <div className="table-box">
         <Table striped bordered hover>

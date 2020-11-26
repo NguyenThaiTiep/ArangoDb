@@ -14,10 +14,12 @@ const update = (input: {
   price?: number;
   description?: string;
   _key?: string;
+  author?: string;
+  amount?: number;
 }) => {
   return API.put("/book", { input: input });
 };
 const remove = (_key: string) => {
-  return API.delete("/book", { params: { id: _key } });
+  return API.delete("/book/remove", { params: { id: _key } });
 };
-export const BookAPI = { getListBook, update };
+export const BookAPI = { getListBook, update, remove };

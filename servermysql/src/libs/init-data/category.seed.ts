@@ -10,7 +10,9 @@ casual.define("Category", function () {
   return {
     name:
       casual.random_element(name) +
+      " " +
       casual.random_element(name) +
+      " " +
       casual.random_element(name),
     amount: 0,
     description: faker.commerce.productDescription(),

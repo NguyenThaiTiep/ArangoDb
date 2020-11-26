@@ -25,7 +25,8 @@ export const PaginationItem = (props: Props) => {
             changePage((pageActive as any) - 1);
           }}
         />
-        {(pageActive as any) >= (lastPage as any) - 1 ? (
+        {(pageActive as any) >= (lastPage as any) - 1 &&
+        (pageActive as any) != 1 ? (
           <Pagination.Ellipsis />
         ) : null}
         {(pageActive as any) - 1 > 1 ? <Pagination.Ellipsis /> : null}

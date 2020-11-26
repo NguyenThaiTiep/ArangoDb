@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup, Form, Modal, Table } from "react-bootstrap";
 import { BookAPIMysql } from "src/api/book/index.mysql";
+import { handelToast } from "src/app/page/toast";
 
 import { HeaderTable } from "../../containers/headerTable";
 import { PaginationItem } from "../pagination";
 import "./style.scss";
+
 interface Props {}
 
 export const ListBookMysql = (props: Props) => {
@@ -23,6 +25,7 @@ export const ListBookMysql = (props: Props) => {
     id: null,
     description: null,
     categoryName: null,
+    author: null,
     categoryId: null,
     amount: null,
   });
@@ -40,16 +43,35 @@ export const ListBookMysql = (props: Props) => {
     setPage({ ...page, page: pageNumber, skip: (pageNumber - 1) * page.take });
   };
   const searchOnChange = (key: string) => {
-    setPage({ ...page, page: 0, skip: 0, key_search: key || "" });
+    setPage({ ...page, page: 1, skip: 0, key_search: key || "" });
   };
-  const updateBook = () => {};
+  const removeBook = (key: number) => {
+    BookAPIMysql.remove(key).then((res) => {
+      handelToast(res.data.status, res.data.time);
+      setPage({ ...page });
+    });
+  };
+  const updateBook = () => {
+    BookAPIMysql.update({
+      id: (bookSelect as any).id,
+      name: (bookSelect as any).name,
+      description: (bookSelect as any).descriprtion,
+      author: (bookSelect as any).author,
+      amount: (bookSelect as any).amount,
+    }).then((res) => {
+      handelToast(res.data.status, res.data.time);
+      if (res.data.status == 200) {
+        setTimeQuery(res.data.time);
+        setPage({ ...page });
+        setShow(false);
+      }
+    });
+  };
   useEffect(() => {
     BookAPIMysql.getListBook(page.take, page.skip, page.key_search).then(
       (res) => {
         if (res.data.status == 200) {
           let books = res.data.result.result;
-          console.log(books);
-
           setBooks(books);
           setTimeQuery(res.data.time);
           setTotal(res.data.result.count);
@@ -63,6 +85,7 @@ export const ListBookMysql = (props: Props) => {
         searchKeyOnChange={searchOnChange}
         total={total}
         timeQuery={timeQuery}
+        title = {"MySql"}
       />
       <div className="table-box">
         <Table striped bordered hover>
@@ -72,6 +95,7 @@ export const ListBookMysql = (props: Props) => {
               <th>Mã</th>
               <th>Tên sách</th>
               <th>Thể loại</th>
+              <th>Tác giả</th>
               <th>Mô tả</th>
               <th>Giá</th>
               <th>SL</th>
@@ -87,6 +111,7 @@ export const ListBookMysql = (props: Props) => {
                       <td>{(item as any).id}</td>
                       <td>{(item as any).name}</td>
                       <td>{(item as any).category.name}</td>
+                      <td>{(item as any).author}</td>
                       <td>{(item as any).description}</td>
                       <td>{(item as any).price}</td>
                       <td>{(item as any).amount}</td>
@@ -98,7 +123,12 @@ export const ListBookMysql = (props: Props) => {
                           >
                             <FontAwesomeIcon icon={faEdit} color={"green"} />
                           </div>
-                          <div className={"icon-item"}>
+                          <div
+                            className={"icon-item"}
+                            onClick={() => {
+                              removeBook((item as any).id);
+                            }}
+                          >
                             <FontAwesomeIcon icon={faTrash} color={"red"} />
                           </div>
                         </ButtonGroup>
@@ -127,19 +157,52 @@ export const ListBookMysql = (props: Props) => {
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Tên Sách</Form.Label>
-              <Form.Control type="email" value={(bookSelect as any).name} />
+              <Form.Control
+                type="text"
+                value={(bookSelect as any).name}
+                onChange={(e: any) => {
+                  setBookSelect({
+                    ...bookSelect,
+                    name: e.target.value,
+                  });
+                }}
+              />
               <Form.Label>Mô tả</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
                 placeholder="text"
                 value={(bookSelect as any).description}
+                onChange={(e: any) => {
+                  setBookSelect({
+                    ...bookSelect,
+                    description: e.target.value,
+                  });
+                }}
               />{" "}
+              <Form.Label>Tác giả</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="text"
+                value={(bookSelect as any).author}
+                onChange={(e: any) => {
+                  setBookSelect({
+                    ...bookSelect,
+                    author: e.target.value,
+                  });
+                }}
+              />
               <Form.Label>Số lượng</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="text"
                 value={(bookSelect as any).amount}
+                onChange={(e: any) => {
+                  setBookSelect({
+                    ...bookSelect,
+                    amount: e.target.value,
+                  });
+                }}
               />
             </Form.Group>
           </Form>
@@ -148,7 +211,7 @@ export const ListBookMysql = (props: Props) => {
           <Button variant="secondary" onClick={handleClose}>
             Thoát
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={updateBook}>
             Lưu
           </Button>
         </Modal.Footer>

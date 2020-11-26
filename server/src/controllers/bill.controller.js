@@ -17,7 +17,11 @@ const count = async (req, res) => {
   let result = await billService.getCount();
   return res.send(result);
 };
-const add = async (req, res) => {};
+const add = async (req, res) => {
+  let input = req.body.input;
+  let result = await billService.add(input);
+  res.send(result);
+};
 const seed = async (req, res) => {
   let amount = req.query.amount || 0;
   let result = await billService.seed({ amount: amount });

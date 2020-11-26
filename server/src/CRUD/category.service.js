@@ -3,7 +3,7 @@ const categorySeed = require("../lib/init-data/category.seed");
 const { Database } = require("../loader/connect");
 const { BookRepo } = require("../models/book");
 const { CategoryRepo } = require("../models/category");
-
+const { faker } = require("faker");
 const getAll = async (take, skip, key) => {
   try {
     let qr = `FOR category IN Category
@@ -46,15 +46,16 @@ const getCount = async () => {
   }
 };
 const add = async (input) => {
-  if (!input || !input.name || !input.code) {
+  if (!input || !input.name) {
     return HandleStatus(500);
   }
   try {
     let startTime = Date.now();
     await CategoryRepo.insert({
       name: input.name,
-      code: input.code,
+      code: "11244",
       amount: input.amount || 0,
+      description: input.description || "",
     });
     return HandleStatus(200, null, null, (Date.now() - startTime) / 1000);
   } catch (e) {

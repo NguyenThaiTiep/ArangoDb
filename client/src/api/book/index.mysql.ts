@@ -9,4 +9,18 @@ const getListBook = (take: number, skip: number, key_search: string) => {
     },
   });
 };
-export const BookAPIMysql = { getListBook };
+const remove = (_key: number) => {
+  return API_MYSQL.delete("/book/remove", { params: { id: _key } });
+};
+const update = (input: {
+  id: number;
+  name?: string;
+  price?: number;
+  description?: string;
+  author?: string;
+  amount?: number;
+}) => {
+  return API_MYSQL.put("/book", { input: input });
+};
+
+export const BookAPIMysql = { getListBook, remove, update };

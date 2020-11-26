@@ -43,7 +43,7 @@ export const ListCategory = (props: Props) => {
   const [categories, setCategories] = useState([]);
   const removeById = (id: string) => {
     CategoryApi.removeById(id).then((res) => {
-      handelToast(res.data.status);
+      handelToast(res.data.status, res.data.time);
       setPage({ ...page });
     });
   };
@@ -53,7 +53,7 @@ export const ListCategory = (props: Props) => {
       _key: (categorySelect as any)._key as string,
       description: (categorySelect as any).description,
     }).then((res) => {
-      handelToast(res.data.status);
+      handelToast(res.data.status, res.data.time);
       setTimeQuery(res.data.time);
       setPage({ ...page });
       setShow(false);
@@ -66,6 +66,7 @@ export const ListCategory = (props: Props) => {
           let categories = res.data.result.result;
           setCategories(categories);
           setTotal(res.data.result.count);
+          setTimeQuery(res.data.time);
         }
       }
     );
@@ -76,6 +77,7 @@ export const ListCategory = (props: Props) => {
         searchKeyOnChange={searchOnChange}
         total={total}
         timeQuery={timeQuery}
+        title={"ArangoDB"}
       />
       <div className="table-box">
         <Table striped bordered hover>
