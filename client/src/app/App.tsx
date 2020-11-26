@@ -21,7 +21,7 @@ function App() {
     <div>
       <Router history={history}>
         <div>
-          <NavbarItem />
+
           <Container>
             <Switch>
               <Route path="/book" component={Home} />
