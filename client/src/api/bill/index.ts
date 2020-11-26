@@ -20,4 +20,8 @@ const update = (input: {
 }) => {
   return API.put("/bill", { input: input });
 };
-export const BillApi = { getListBill, removeById, update };
+const seedData = (amount: number) => {
+  return API.get("/bill/seed", { params: { amount: amount } });
+};
+const add = () => {};
+export const BillApi = { getListBill, removeById, update, seedData };

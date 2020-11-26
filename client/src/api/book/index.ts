@@ -22,4 +22,17 @@ const update = (input: {
 const remove = (_key: string) => {
   return API.delete("/book/remove", { params: { id: _key } });
 };
-export const BookAPI = { getListBook, update, remove };
+const seedData = (amount: number) => {
+  return API.get("/book/seed", { params: { amount: amount } });
+};
+const add = (input: {
+  name: string;
+  price?: number;
+  author: string;
+  amount: number;
+  categoryId: string;
+  description?: string;
+}) => {
+  return API.post("/book/add", { input: input });
+};
+export const BookAPI = { getListBook, update, remove, seedData, add };

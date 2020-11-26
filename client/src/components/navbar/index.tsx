@@ -33,7 +33,9 @@ export const NavbarItem = (props: Props) => {
             <Nav.Link href="/bill" active={page === "bill"}>
               Các hóa đơn
             </Nav.Link>
-            <Nav.Link href="/compare">So sánh</Nav.Link>
+            <Nav.Link href="/compare" active={page === "compare"}>
+              So sánh
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

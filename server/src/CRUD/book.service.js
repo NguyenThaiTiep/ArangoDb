@@ -62,7 +62,7 @@ const add = async (input) => {
       author: input.author,
       price: input.price || 0,
       amount: input.amount || 0,
-      description: input.description || "",
+      description: input.description || " ",
     });
     return HandleStatus(200, null, null, (Date.now() - startTime) / 1000);
   } catch (e) {

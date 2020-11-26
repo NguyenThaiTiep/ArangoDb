@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-export const handelToast = (code = 0, time?: number) => {
+export const handelToast = (code = 0, time?: number, message?: string) => {
   switch (code) {
     case 100:
     case 200:
@@ -13,8 +13,11 @@ export const handelToast = (code = 0, time?: number) => {
     case 404:
       notFounded();
       break;
+    case 500:
+      notFounded();
+      break;
     default:
-      error();
+      warn(message);
       break;
   }
 };
@@ -27,8 +30,8 @@ function error() {
   toast.error("Thất bại!");
 }
 
-function warn() {
-  toast.warn("Cần nhập đầy đủ thông tin !");
+function warn(message?: string) {
+  toast.warn(message || "Cần nhập đầy đủ thông tin !");
 }
 
 function founded() {

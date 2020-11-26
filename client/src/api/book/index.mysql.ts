@@ -22,5 +22,17 @@ const update = (input: {
 }) => {
   return API_MYSQL.put("/book", { input: input });
 };
-
-export const BookAPIMysql = { getListBook, remove, update };
+const seedData = (amount: number) => {
+  return API_MYSQL.get("/book/seed", { params: { amount: amount } });
+};
+const add = (input: {
+  name: string;
+  price?: number;
+  author: string;
+  amount: number;
+  categoryId: number;
+  description?: string;
+}) => {
+  return API_MYSQL.post("/book/add", { input: input });
+};
+export const BookAPIMysql = { getListBook, remove, update, seedData, add };

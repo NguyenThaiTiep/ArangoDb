@@ -20,4 +20,16 @@ const update = (input: {
 }) => {
   return API_MYSQL.put("/category", { input: input });
 };
-export const CategoryAPI_MYSQL = { getListCategory, removeById, update };
+const seedData = (amount: number) => {
+  return API_MYSQL.get("/category/seed", { params: { amount: amount } });
+};
+const add = (input: { name: string; description?: string }) => {
+  return API_MYSQL.post("/category/add", { input: input });
+};
+export const CategoryAPI_MYSQL = {
+  getListCategory,
+  removeById,
+  update,
+  seedData,
+  add,
+};

@@ -20,4 +20,7 @@ const update = (input: {
 }) => {
   return API_MYSQL.put("/bill", { input: input });
 };
-export const BillAPI_MYSQL = { getListBill, removeById, update };
+const seedData = (amount: number) => {
+  return API_MYSQL.get("/bill/seed", { params: { amount: amount } });
+};
+export const BillAPI_MYSQL = { getListBill, removeById, update, seedData };

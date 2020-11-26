@@ -13,7 +13,7 @@ export class Book {
   id: number;
   @Column({ charset: "utf8", type: "nvarchar" })
   name: string;
-  @Column()
+  @Column({ default: "awfafaf" })
   code: string;
   @Column({ charset: "utf8", type: "nvarchar" })
   author: string;
@@ -21,7 +21,7 @@ export class Book {
   amount: number;
   @Column({ default: 0 })
   price: number;
-  @Column({ charset: "utf8", type: "text" })
+  @Column({ charset: "utf8", type: "text", nullable: true })
   description: string;
   @ManyToOne((type) => Category, (o) => o.books, {
     onDelete: "CASCADE",
