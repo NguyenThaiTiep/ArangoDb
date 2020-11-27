@@ -1,8 +1,8 @@
 import axios from "axios";
 
 
-const API = axios.create({
-    baseURL: "http://localhost:3005",
+const API_MYSQL = axios.create({
+    baseURL: "http://localhost:3001",
     responseType: "json",
 });
 
@@ -22,13 +22,11 @@ const errorHandler = (error: any) => {
     return Promise.reject({...error});
 };
 
-API.interceptors.request.use((request) => requestHandler(request));
+API_MYSQL.interceptors.request.use((request) => requestHandler(request));
 
-API.interceptors.response.use(
+API_MYSQL.interceptors.response.use(
     (response) => successHandler(response),
     (error) => errorHandler(error)
 );
 
-// configureFakeBackend(API);
-
-export default API;
+export default API_MYSQL;

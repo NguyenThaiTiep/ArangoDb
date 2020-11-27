@@ -3,14 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup, Form, Modal, Table } from "react-bootstrap";
 import { CategoryApi } from "../../api/category";
-import { handelToast } from "../../app/page/toast";
+import { handleToast } from "../../app/page/toast";
 import { HeaderTable } from "../../containers/headerTable";
 import { PaginationItem } from "../pagination";
 import "./style.scss";
-
-interface Props {}
-
-export const ListCategory = (props: Props) => {
+export const ListCategory = () => {
   const [page, setPage] = useState({
     page: 1,
     take: 10,
@@ -34,7 +31,7 @@ export const ListCategory = (props: Props) => {
     setShow(true);
   };
   const [total, setTotal] = useState(0);
-  const handelChangePage = (pageNumber: any) => {
+  const handleChangePage = (pageNumber: any) => {
     setPage({ ...page, page: pageNumber, skip: (pageNumber - 1) * page.take });
   };
   const searchOnChange = (key: string) => {
@@ -43,7 +40,7 @@ export const ListCategory = (props: Props) => {
   const [categories, setCategories] = useState([]);
   const removeById = (id: string) => {
     CategoryApi.removeById(id).then((res) => {
-      handelToast(res.data.status, res.data.time);
+      handleToast(res.data.status, res.data.time);
       setPage({ ...page });
     });
   };
@@ -53,7 +50,7 @@ export const ListCategory = (props: Props) => {
       _key: (categorySelect as any)._key as string,
       description: (categorySelect as any).description,
     }).then((res) => {
-      handelToast(res.data.status, res.data.time);
+      handleToast(res.data.status, res.data.time);
       setTimeQuery(res.data.time);
       setPage({ ...page });
       setShow(false);
@@ -129,7 +126,7 @@ export const ListCategory = (props: Props) => {
         <PaginationItem
           pageActive={page.page}
           lastPage={Math.ceil(total / page.take)}
-          handelChangePage={handelChangePage}
+          handleChangePage={handleChangePage}
         />
       </div>
       <Modal show={show}>

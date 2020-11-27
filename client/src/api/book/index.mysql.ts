@@ -1,4 +1,4 @@
-import API_MYSQL from "../index.mysq";
+import API_MYSQL from "../index.mysql";
 
 const getListBook = (take: number, skip: number, key_search: string) => {
   return API_MYSQL.get("/book", {

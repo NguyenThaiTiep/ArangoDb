@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-export const handelToast = (code = 0, time?: number, message?: string) => {
+export const handleToast = (code = 0, time?: number, message?: string) => {
   switch (code) {
     case 100:
     case 200:
