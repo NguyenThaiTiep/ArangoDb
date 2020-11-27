@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="14559db4-7c84-454e-bfd5-b43a326ebe90" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/api/index.mysql.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/a.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/api/bill/index.mysql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/bill/index.mysql.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/api/bill/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/bill/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/api/book/index.mysql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/book/index.mysql.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/api/category/index.mysql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/category/index.mysql.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/api/index.mysq.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/page/Bill/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/page/Bill/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/page/Category/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/page/Category/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/page/Compare/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/page/Compare/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/page/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/page/home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/page/toast/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/page/toast/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/add/book.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/add/book.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/add/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/add/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/listBill/index.mysql.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/listBill/index.mysql.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/listBill/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/listBill/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/listBook/index.mysql.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/listBook/index.mysql.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/listBook/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/listBook/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/listCaterogy/index.mysql.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/listCaterogy/index.mysql.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/listCaterogy/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/listCaterogy/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/navbar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/navbar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pagination/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pagination/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/seed/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/seed/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/ModelEdit/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/headerTable/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/headerTable/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servermysql/ormconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/servermysql/ormconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kqB5aUi9ORp3cV2a4HWA8yLiqa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\phong\Desktop\ArangoDb\servermysql\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\phong\Desktop\ArangoDb\docs" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="14559db4-7c84-454e-bfd5-b43a326ebe90" name="Default Changelist" comment="" />
+      <created>1606418059404</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606418059404</updated>
+      <workItem from="1606418061632" duration="18007000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1606467122334">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1606467122334" />
+  </component>
+</project>
